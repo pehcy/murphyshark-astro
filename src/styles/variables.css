@@ -1,0 +1,24 @@
+:root {
+    --gutter:                   clamp(1rem, 0.73rem + 1.36vw, 1.875rem);
+    --flow-space:               clamp(1.1875rem, 1.01rem + 0.87vw, 1.75rem);
+
+    --size-step-min-1:          clamp(0.75rem, 0.73rem + 0.10vw, 0.8125rem);
+    --size-step-6:              clamp(3.5rem, 2.52rem + 4.90vw, 6.6875rem);
+
+    --space-xs:                 clamp(0.75rem, 0.69rem + 0.29vw, 0.9375rem);
+    --space-sx-s:               clamp(0.3125rem, 0.14rem + 0.87vw, 0.875rem);
+    --space-2xs:                clamp(0.5rem, 0.46rem + 0.19vw, 0.625rem);
+    --space-s:                  clamp(1rem, 0.92rem + 0.39vw, 1.25rem);
+    --space-s-m:                clamp(0.625rem, 0.41rem + 1.06vw, 1.3125rem);
+    --space-m-l:                clamp(0.875rem, 0.55rem + 1.63vw, 1.9375rem);
+    --space-l:                  clamp(3rem, 2.77rem + 1.17vw, 3.75rem);
+
+    --region-space-fallback:    clamp(1.1875rem, 0.48rem + 3.56vw, 8.75rem);
+
+    --color-bg-accent:         #e0e4f6;
+    --gradient-conic:           conic-gradient(
+        #231aa0 0 28%,
+        #4467dd 0 67%,
+        #fbbe25 0 100%
+    );
+}

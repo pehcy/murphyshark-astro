@@ -1,0 +1,89 @@
+---
+---
+
+<header class="page-header top-0">
+  <a href="#main" id="skiplink-top" class="skip-link">Skip to content</a>
+  <div class="flex items-center header-wrapper space-between">
+    <a href="/"><b>MurphyShark</b></a>
+    <nav id="mainnav" aria-label="Main" class="mainnav">
+      <ul role="list" class="cluster">
+        <li><a href="/">About</a></li>
+        <li><a href="/resume">Resumé</a></li>
+        <li><a href="/notes">Notes</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<style>
+  .skip-link:not(:focus) {
+    border: 0;
+    block-size: auto;
+    inline-size: 1px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .skip-link {
+    left: 1rem;
+    top: 1rem;
+    z-index: 999;
+  }
+
+  .sticky {
+    position: sticky;
+  }
+
+  .top-0 {
+    top: 0;
+  }
+
+  .page-header {
+    background-color: inherit;
+    z-index: 10;
+  }
+
+  .space-between {
+    justify-content: space-between;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .header-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    inline-size: 100%;
+    max-inline-size: 1280px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .mainnav ul {
+    list-style: none;
+  }
+
+  .mainnav a {
+    border-radius: 0.3rem;
+    display: block;
+    font-weight: 600;
+    padding: clamp(0.3125rem, 0.27rem + 0.19vw, 0.4375rem) clamp(0.1875rem, 0.15rem + 0.19vw, 0.3125rem);
+    text-decoration: none;
+    text-decoration-color: transparent;
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.3em;
+  }
+
+  .mainnav a:hover {
+    text-decoration: underline;
+  }
+</style>

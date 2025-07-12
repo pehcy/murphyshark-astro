@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/variables.css";
+
+const pageTitle: string = "Resumé";
+---
+
+<BaseLayout title={pageTitle} description="MurphyShark">
+  <article class="full">
+    <div class="wrapper flow prose">
+      <h1 class="gradient-text">Resumé</h1>
+      <div>
+        <h5>Persistent Systems Limited.</h5>
+        <p>2024 Sept - Now</p>
+        <p>
+          While we have been moved to Persistent, we continue to maintain and
+          migrate TEMS, the original product of Infovista.
+        </p>
+      </div>
+      <div>
+        <h5>Infovista.</h5>
+        <p>2021 Nov - 2024 Sept</p>
+        <p>
+          I migrated the important parts of TEMS Cloud services to be compatible
+          with RHEL and Ubuntu Linux servers. I also worked in other TEMS
+          projects, such as the JSON parser for network perfomance summary
+          written in TypeScript, and various IPSniffing toolsets to allow
+          automate testing and benchmark the results of several Android
+          services. Beside that, I also did some research on OCR text extraction
+          during automation tests.
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

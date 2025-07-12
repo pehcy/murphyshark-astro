@@ -1,0 +1,28 @@
+---
+const { frontmatter } = Astro.props;
+
+import '../styles/global.css';
+
+import HeaderComponent from "../components/HeaderComponent.astro";
+import MainComponent from "../components/MainComponent.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={frontmatter.description} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body
+    style="display: flex; flex-direction: column; min-height: 100vh; margin: 0;"
+  >
+    <HeaderComponent />
+    <MainComponent>
+      <article style="max-width: 64rem; margin: 0 auto;">
+        <slot />
+      </article>
+    </MainComponent>
+    <Footer />
+  </body>
+</html>

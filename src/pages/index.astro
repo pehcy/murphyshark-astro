@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/variables.css";
+
+const postsMeta = import.meta.glob("./posts/*.md", { eager: true });
+console.log(postsMeta);
+const allPosts = Object.values(postsMeta);
+
+const pageTitle = "MurphyShark";
+const _options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+---
+
+<BaseLayout title={pageTitle} description="MurphyShark">
+  <article class="full">
+    <div class="wrapper flow prose">
+      <h2>Hi!</h2>
+      <p>
+        I experienced in problem solving and providing solutions for individual
+        entrepreneurs to large companies and everything in between.
+        <br />
+        My background includes experience in computer science, mathematics, web design
+        and technical writting.
+      </p>
+
+      <p>
+        Beside of that I occasionally give tuition to college students on
+        mathematical subjects (such as Calculus, Statistics, etc.).
+      </p>
+
+      <p>You can find me on LinkedIn and Twitter.</p>
+    </div>
+  </article>
+  <section class="full">
+    <div class="wrapper flow prose">
+      <h2>Blog</h2>
+      <p>
+        Some blog posts or technical articles that I wrote while exploring
+        Machine Learning and web framework, feel free to give any comments.
+      </p>
+      <div class="__grid">
+        {
+          allPosts.map((post: any) => (
+            <div class="card">
+              <h3 style="text-step-2">
+                <a href={post.url}>{post.frontmatter.title}</a>
+              </h3>
+              <div class="meta | cluster">
+                <span>
+                  <time datetime={post.frontmatter.pubDate}>
+                    {new Date(
+                      Date.parse(post.frontmatter.pubDate),
+                    ).toLocaleDateString("en-US")}
+                  </time>
+                </span>
+              </div>
+              <p>{post.frontmatter.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .card {
+    display: grid;
+    grid-template-rows: [image] max-content [headline] max-content [meta] max-content [desc] auto [footer] max-content;
+    text-decoration: none;
+    background-color: var(--color-bg-accent);
+    border-radius: 0.3rem;
+    border: 4px solid var(--color-bg-accent);
+    padding: var(--space-s-m);
+    max-inline-size: unset;
+    position: relative;
+  }
+
+  .card a:after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .card > p {
+    grid-row: desc;
+  }
+
+  .text-step-2 {
+    font-size: clamp(1.6875rem. 1.36rem + 1.63vw, 2.75rem);
+    grid-row: headline;
+  }
+
+  .__grid {
+    display: grid;
+    align-items: start;
+    gap: var(--gutter, var(--space-s-m));
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(clamp(16rem, 50vw, 28rem), 1fr)
+    );
+  }
+
+  .list__grid {
+    align-items: start;
+    display: grid;
+    gap: var(--gutter);
+    list-style: none;
+  }
+
+  .meta {
+    font-size: var(--size-step-min-1);
+    grid-row: meta;
+  }
+
+  .hero__inner {
+    background-color: blue;
+    grid-column: full;
+  }
+</style>

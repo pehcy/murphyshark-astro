@@ -1,0 +1,85 @@
+@import './variables.css';
+
+@font-face {
+    font-family: "Atkinson-Hyperlegible-Regular";
+    src: url("/fonts/Atkinson-Hyperlegible-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    text-wrap: pretty;
+}
+
+body {
+    font-family: "Atkinson-Hyperlegible-Regular", sans-serif;
+    color: #2e1065;
+    background-color: #f4f8ff;
+    font-size: clamp(1.125rem, 0.97rem + 0.78vw, 1.625rem);
+    letter-spacing: -0.05ch;
+    line-height: 1.4;
+    text-rendering: optimizeSpeed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5rem 0;
+	color: rgb(var(--black));
+	line-height: 1.2;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+    letter-spacing: -0.075ch;
+    line-height: 1.2;
+}
+
+h1 {
+	font-size: var(--size-step-6);
+}
+
+h2 {
+	font-size: 2.441em;
+}
+
+h3 {
+	font-size: 1.953em;
+}
+
+h4 {
+	font-size: 1.563em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+.gradient-text {
+    background-clip: text;
+    color: transparent;
+    background-image: var(--gradient-conic);
+    background-size: 50%;
+    padding: .6rem 0;
+}
+
+.prose {
+    --wrapperWidth: 64rem;
+}
+
+.full {
+    grid-column: full;
+}
+
+.flow>*+*{
+    margin-block-start: var(--flow-space);
+}
+
+.cluster {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+    justify-content: flex-start;
+}

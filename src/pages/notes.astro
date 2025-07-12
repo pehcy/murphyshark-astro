@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/variables.css";
+
+const pageTitle: string = "Notes";
+---
+
+<BaseLayout title={pageTitle} description="MurphyShark">
+  <article class="full">
+    <div class="wrapper flow prose">
+      <h1 class="gradient-text">Notes</h1>
+      <div class="wrapper flow prose">
+        <p>
+          Honestly, I made these notes for myself, some topics are for the
+          tuition class that I taught during my freetime.
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
