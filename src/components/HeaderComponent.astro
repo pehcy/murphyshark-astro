@@ -4,7 +4,7 @@
 <header class="page-header top-0">
   <a href="#main" id="skiplink-top" class="skip-link">Skip to content</a>
   <div class="flex items-center header-wrapper space-between">
-    <a href="/"><b>MurphyShark</b></a>
+    <a href="/" class="cluster"><b>MurphyShark</b></a>
     <nav id="mainnav" aria-label="Main" class="mainnav">
       <ul role="list" class="cluster">
         <li><a href="/">About</a></li>
@@ -28,13 +28,15 @@
   }
 
   .skip-link {
+    display: block;
     left: 1rem;
     top: 1rem;
     z-index: 999;
   }
 
   .sticky {
-    position: sticky;
+    position: relative;
+    z-index: 1;
   }
 
   .top-0 {
@@ -69,6 +71,8 @@
 
   .mainnav ul {
     list-style: none;
+    margin-top: 0.5ch;
+    margin-bottom: 0.5ch;
   }
 
   .mainnav a {

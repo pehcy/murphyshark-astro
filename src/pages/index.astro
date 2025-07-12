@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroComponent from "../components/HeroComponent.astro";
 import "../styles/variables.css";
 
 const postsMeta = import.meta.glob("./posts/*.md", { eager: true });
@@ -16,7 +17,8 @@ const _options = {
 ---
 
 <BaseLayout title={pageTitle} description="MurphyShark">
-  <article class="full">
+  <HeroComponent />
+  <article>
     <div class="wrapper flow prose">
       <h2>Hi!</h2>
       <p>
@@ -35,7 +37,7 @@ const _options = {
       <p>You can find me on LinkedIn and Twitter.</p>
     </div>
   </article>
-  <section class="full">
+  <section>
     <div class="wrapper flow prose">
       <h2>Blog</h2>
       <p>
@@ -118,10 +120,5 @@ const _options = {
   .meta {
     font-size: var(--size-step-min-1);
     grid-row: meta;
-  }
-
-  .hero__inner {
-    background-color: blue;
-    grid-column: full;
   }
 </style>

@@ -1,0 +1,42 @@
+---
+import "../styles/variables.css";
+---
+
+<div style="grid-column: full;">
+  <div class="hero__inner region">
+    <h1 class="text-center hero__innertext">MurphyShark</h1>
+  </div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    preserveAspectRatio="none"
+    viewBox="0 0 1440 320"
+    aria-hidden="true"
+    class="divider"
+    ><path
+      d="M0 64h16c16 0 48 0 80-5.3 32-5.7 64-15.7 96 10.6C224 96 256 160 288 176s64-16 96-16 64 32 96 42.7c32 10.3 64 .3 96-10.7s64-21 96-32 64-21 96-42.7C800 96 832 64 864 90.7 896 117 928 203 960 208s64-69 96-106.7q48-55.95 96 0c32 37.7 64 111.7 96 133.4 32 21.3 64-10.7 96-32 32-21.7 64-31.7 80-37.4l16-5.3V0H0Z"
+    ></path>
+  </svg>
+</div>
+
+<style>
+  .hero__inner {
+    background-color: var(--color-blue-subdued);
+    color: var(--color-bg-accent);
+    font-family: 'RedHatMono-Regular';
+  }
+
+  .divider {
+    block-size: 3.5em;
+    display: block;
+    inline-size: 100%;
+    fill: var(--color-blue-subdued);
+    margin-top: -1px;
+  }
+
+  .region__ {
+    padding-block-end: clamp(1.1875rem, 0.48rem + 3.56vw, 3.5rem);
+    padding-block-start: clamp(1.1875rem, 0.48rem + 3.56vw, 3.5rem);
+  }
+</style>

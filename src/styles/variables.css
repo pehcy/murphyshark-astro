@@ -15,7 +15,8 @@
 
     --region-space-fallback:    clamp(1.1875rem, 0.48rem + 3.56vw, 8.75rem);
 
-    --color-bg-accent:         #e0e4f6;
+    --color-bg-accent:          #e0e4f6;
+    --color-blue-subdued:       #4730c6; 
     --gradient-conic:           conic-gradient(
         #231aa0 0 28%,
         #4467dd 0 67%,
