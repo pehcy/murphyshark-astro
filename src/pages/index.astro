@@ -49,7 +49,7 @@ const _options = {
           allPosts.map((post: any) => (
             <div class="card">
               <h3 style="text-step-2">
-                <a href={post.url}>{post.frontmatter.title}</a>
+                <a href={post.url} style="text-decoration: none; color: var(--color-text);">{post.frontmatter.title}</a>
               </h3>
               <div class="meta | cluster">
                 <span>
@@ -74,9 +74,9 @@ const _options = {
     display: grid;
     grid-template-rows: [image] max-content [headline] max-content [meta] max-content [desc] auto [footer] max-content;
     text-decoration: none;
-    background-color: var(--color-bg-accent);
+    background-color: var(--color-bg-accent-dime);
     border-radius: 0.3rem;
-    border: 4px solid var(--color-bg-accent);
+    border: 4px solid var(--color-bg-accent-dime);
     padding: var(--space-s-m);
     max-inline-size: unset;
     position: relative;

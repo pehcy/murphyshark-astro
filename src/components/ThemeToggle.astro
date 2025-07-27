@@ -1,0 +1,95 @@
+---
+import "../styles/variables.css";
+---
+
+<div style="font-size: 1rem;">
+  <button type="button" class="toggle" id="toggle">
+    <span class="toggle-control"></span>
+    <span class="toggle-text">Light</span>
+  </button>
+</div>
+
+<style 
+  is:global
+>
+  .toggle {
+    border: 0 solid transparent;
+    background-color: transparent;
+    -webkit-appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .toggle-control {
+    display: inline-block;
+    position: relative;
+    margin-right: .5rem;
+    width: 2em;
+    box-sizing: content-box;
+    padding: var(--toggle-padding);
+    border: 2px solid var(--toggle-color);
+    background-color: var(--toggle-color-secondary);
+    transition: background-color .15s ease-in-out;
+  }
+
+  .toggle-control::after {
+    transition: left .3s ease-in-out, background-color .15s ease-in-out;
+    position: absolute;
+    content: "";
+    width: 1em;
+    background-color: var(--toggle-color);
+    left: var(--toggle-left);
+  }
+
+  .toggle-control, .toggle-control::after {
+    height: 1em;
+    border-radius: 6.25em;
+  }
+
+  .toggle-text {
+    font-size: 1em;
+    line-height: 150%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+</style>
+
+<script is:inline>
+  const theme = (() => {
+    const localStorageTheme = localStorage?.getItem('theme') ?? '';
+
+    if (['dark', 'light'].includes(localStorageTheme)) {
+      return localStorageTheme;
+    }
+
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+
+    return 'light';
+  })();
+
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+  }
+  else {
+    document.documentElement.classList.add('dark');
+  }
+
+  window.localStorage.setItem('theme', theme);
+
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle('dark');
+
+    const isDark = element.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.getElementsByClassName('toggle-text')[0].innerHTML = isDark ? 'Dark' : 'Light';
+  }
+
+  document.getElementById("toggle")?.addEventListener('click', handleToggleClick);
+</script>

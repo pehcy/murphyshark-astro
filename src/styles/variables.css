@@ -15,11 +15,38 @@
 
     --region-space-fallback:    clamp(1.1875rem, 0.48rem + 3.56vw, 8.75rem);
 
-    --color-bg-accent:          #e0e4f6;
+    --color-bg-accent:          #f4f8ff;
+    --color-bg-accent-dime:     #e0e4f6;
+    --color-text:               #2e1065;
     --color-blue-subdued:       #4730c6; 
     --gradient-conic:           conic-gradient(
         #231aa0 0 28%,
         #4467dd 0 67%,
         #fbbe25 0 100%
     );
+
+    /*--toggle-color: hsl(156, 78%, 15%);
+    --toggle-color-secondary: hsl(156, 78%, 45%);
+    */
+    --toggle-color: hsl(244, 72%, 36%);
+    --toggle-color-secondary: hsl(226, 69%, 45%);
+
+    --toggle-padding: 2px;
+    --toggle-left: 18px;
+}
+
+:root.dark {
+    /* --toggle-color: hsl(0, 75%, 54%);
+    --toggle-color-secondary: hsl(0, 75%, 80%); */
+    --toggle-color: hsl(27, 75%, 54%);
+    --toggle-color-secondary: hsl(27, 75%, 80%);
+    --toggle-left: 2px;
+    --color-bg-accent:          #282b46;
+    --color-bg-accent-dime:     #333856;
+    --color-text:               #f4f8ff;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }

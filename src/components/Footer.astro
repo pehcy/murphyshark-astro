@@ -1,4 +1,5 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
 const gutter: string = "clamp(1rem, 0.73rem + 1.36vw, 1.875rem)";
 const spaceS: string = "clamp(1rem, 0.92rem + 0.39vw, 1.25rem)";
 
@@ -8,7 +9,7 @@ const currentYear: number = new Date().getFullYear();
   .site-foot {
     top: 100vh;
     position: sticky;
-    background: #2e1065;
+    background: var(--color-blue-subdued);
     color: #f5f3ff;
     padding: clamp(.625rem, .41rem + 1.06vw, 1.3125rem);
   }
@@ -89,6 +90,7 @@ const currentYear: number = new Date().getFullYear();
           </div>
         </a>
       </nav>
+      <ThemeToggle />
     </div>
   </div>
 </footer>

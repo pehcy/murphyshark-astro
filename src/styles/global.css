@@ -23,8 +23,8 @@
 
 body {
     font-family: "Atkinson-Hyperlegible-Regular", sans-serif;
-    color: #2e1065;
-    background-color: #f4f8ff;
+    color: var(--color-text);
+    background-color: var(--color-bg-accent);
     font-size: clamp(1.125rem, 0.97rem + 0.78vw, 1.625rem);
     letter-spacing: -0.05ch;
     line-height: 1.4;
