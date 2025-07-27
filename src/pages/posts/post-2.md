@@ -28,7 +28,7 @@ The metadata.jsonl recorded all the example questions and its corresponding corr
 # Retrieve first 30 rows of GAIA questions
 sample = qa_lines[30]
 # Tools required to answer the first 30 questions
-sample['Anntator Metadata']['Tools'].split('\n')
+sample['Annotator Metadata']['Tools'].split('\n')
 # >>> ['1. Search engine', '2. Web browser', '3. PDF viewer']
 ```
 We can now see that to answer these types of questions, the agent need to search the answers online via search engine (Google, Duckduckgo, Yahoo, etc.) through any web browser (Firefox, Edge, Google Chrome, etc.), as well as PDF viewer to look through available Arxiv articles or journal.

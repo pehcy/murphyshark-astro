@@ -48,7 +48,7 @@ const _options = {
         {
           allPosts.map((post: any) => (
             <div class="card">
-              <h3 style="text-step-2">
+              <h3 class="text-step-2">
                 <a href={post.url} style="text-decoration: none; color: var(--color-text);">{post.frontmatter.title}</a>
               </h3>
               <div class="meta | cluster">
@@ -97,6 +97,7 @@ const _options = {
 
   .text-step-2 {
     font-size: clamp(1.6875rem. 1.36rem + 1.63vw, 2.75rem);
+    margin: 0;
     grid-row: headline;
   }
 
