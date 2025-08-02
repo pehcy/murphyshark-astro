@@ -9,7 +9,7 @@ interface Props {
 }
  
 const { title, description, image, canonicalUrl, type, publishedTime } = Astro.props;
-const defaultImageUrl: string = "/apple-touch-icon.png"
+const defaultImageUrl: string = "/images/apple-touch-icon.png"
 const isEmpty = (str: string) => (!str?.length);
 ---
  
@@ -38,7 +38,7 @@ const isEmpty = (str: string) => (!str?.length);
 <meta property="twitter:description" content={description} />
 <meta name="twitter:url" content={canonicalUrl} />
 <meta name="twitter:image" content={!isEmpty(image) ? image : defaultImageUrl} />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/images/favicon.ico" sizes="any" />
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
