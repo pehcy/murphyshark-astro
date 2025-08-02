@@ -61,7 +61,7 @@ a {
 }
 
 a:is(.indicator):after {
-    background-image: url(/external.svg);
+    background-image: url(/images/external.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: 60% auto;
