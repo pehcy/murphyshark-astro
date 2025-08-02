@@ -60,6 +60,26 @@ a {
     color: inherit;
 }
 
+a:is(.indicator):after {
+    background-image: url(/external.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    block-size: 1em;
+    content: "(external link)";
+    content-visibility: hidden;
+    display: inline-block;
+    inline-size: 1em;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 1em;
+    white-space: nowrap;
+}
+
+.link-underline {
+    text-decoration: underline;
+}
+
 h1, h2, h3 {
     font-weight: 900;
     letter-spacing: -0.075ch;

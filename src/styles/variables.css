@@ -13,6 +13,7 @@
     --space-s-m:                clamp(0.625rem, 0.41rem + 1.06vw, 1.3125rem);
     --space-m-l:                clamp(0.875rem, 0.55rem + 1.63vw, 1.9375rem);
     --space-l:                  clamp(3rem, 2.77rem + 1.17vw, 3.75rem);
+    --space-xl:                 clamp(2.375rem, 2.03rem + 1.73vw, 3.5rem);
 
     --region-space-fallback:    clamp(1.1875rem, 0.48rem + 3.56vw, 8.75rem);
 

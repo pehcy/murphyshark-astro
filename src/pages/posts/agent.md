@@ -5,7 +5,7 @@ author: pehcy
 description: "Creates an Q&A assistant with Gemini-2.0 and Langchain"
 image:
     url: "https://docs.astro.build/assets/arc.webp"
-    alt: "The Astro logo on a dark background with a purple gradient arc."
+    alt: ""
 pubDate: 2025-05-09
 tags: ["agent", "LLM", "🤗"]
 ---

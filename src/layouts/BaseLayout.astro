@@ -2,21 +2,33 @@
 interface Props {
   title: string;
   description: string;
+  image: string;
+  canonicalUrl: string;
+  type: 'website' | 'article';
+  publishedTime?: string;
 }
-const { title, description } = Astro.props;
+
+const { title, description, image, canonicalUrl, type, publishedTime } = Astro.props;
 
 import '../styles/global.css';
 
 import HeaderComponent from "../components/HeaderComponent.astro";
 import MainComponent from "../components/MainComponent.astro";
 import Footer from "../components/Footer.astro";
+import Metadata from '../components/Metadata.astro';
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
+    <Metadata 
+      title={title}
+      description={description}
+      image={image}
+      canonicalUrl={canonicalUrl}
+      type={type}
+      publishedTime={publishedTime}
+    />
   </head>
   <body
     style="display: flex; flex-direction: column; min-height: 100vh; margin: 0;"
