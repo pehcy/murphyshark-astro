@@ -1,73 +1,19 @@
 ---
+import '../styles/global.css';
 import ThemeToggle from "./ThemeToggle.astro";
-const gutter: string = "clamp(1rem, 0.73rem + 1.36vw, 1.875rem)";
-const spaceS: string = "clamp(1rem, 0.92rem + 0.39vw, 1.25rem)";
 
 const currentYear: number = new Date().getFullYear();
 ---
 
-<style define:vars={{ gutter, spaceS }}>
-  .site-foot {
-    top: 100vh;
-    position: sticky;
-    background: var(--color-blue-subdued);
-    color: #f5f3ff;
-    padding: clamp(0.625rem, 0.41rem + 1.06vw, 1.3125rem);
-  }
-
-  .mt-l-xl {
-    margin-top: clamp(1.1875rem, 0.48rem + 3.56vw, 3.5rem);
-  }
-
-  .foot-wrapper {
-    margin-inline: auto;
-    max-inline-size: 85rem;
-    padding-inline: var(--gutter);
-  }
-
-  .site-foot__inner {
-    align-items: center;
-    display: flex;
-    gap: var(--spaceS);
-    justify-content: center;
-  }
-
-  .site-foot__inner a:not([class]) {
-    color: currentColor;
-  }
-
-  .site-foot svg {
-    block-size: 0.9em;
-    inline-size: 0.9em;
-  }
-
-  .sr-only {
-    clip: rect(0, 0, 0, 0);
-    border-width: 0;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-
-  .text-step-0 {
-    font-size: clamp(0.9375rem, 0.86rem + 0.39vw, 1.1875rem);
-  }
-</style>
-
-<footer class="site-foot mt-l-xl">
-  <div class="foot-wrapper">
-    <div class="site-foot__inner">
-      <nav class="site-foot__inner text-step-0">
-        <span>© {currentYear}</span>
-        <a href="/" aria-current="page">MurphyShark</a>
-        <span>❤ powered by Astro</span>
-      </nav>
-      <nav id="social" class="site-foot__inner">
-        <a href="/feed.xml" rel="alternate" type="application/atom+xml">
+<footer class="site-footer mt-l-xl p-s-m">
+  <div class="wrapper">
+		<div class="cluster gutter-xs flex-col">
+			<nav aria-label="Complementary" class="cluster">
+				© {currentYear}
+				<a href="/" class="font-logo | cluster"><b>MurphyShark</b></a>
+			</nav>
+			<nav aria-label="Social" class="cluster">
+				<a href="/feed.xml" rel="alternate" type="application/atom+xml">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -83,7 +29,7 @@ const currentYear: number = new Date().getFullYear();
               r="1"></circle></svg
           >
         </a>
-        <a href="" rel="me">
+				<a href="" rel="me">
           <span class="sr-only">github</span>
           <div aria-hidden="true">
             <svg
@@ -108,8 +54,52 @@ const currentYear: number = new Date().getFullYear();
             </svg>
           </div>
         </a>
-      </nav>
-      <ThemeToggle />
-    </div>
-  </div>
+			</nav>
+			<nav aria-label="Theme" class="cluster" style="--gutter: 0.5em;">
+				<h2 class="theme-toggle-label">Theme</h2>
+				<ThemeToggle />
+			</nav>
+		</div>
+	</div>
 </footer>
+
+<style>
+	.site-footer {
+		--cluster-horizontal-alignment: center;
+	}
+
+	.site-footer svg {
+    block-size: 0.9em;
+    inline-size: 0.9em;
+  }
+
+  .sr-only {
+    clip: rect(0, 0, 0, 0);
+    border-width: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+	.flex-col {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+	}
+
+	@media only screen and (max-width: 640px) {
+		.flex-col {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.theme-toggle-label {
+		font-size: var(--size-step-min-1);
+		margin: 0;
+	}
+</style>

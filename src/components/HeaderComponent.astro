@@ -1,11 +1,12 @@
 ---
+import '../styles/global.css';
 ---
 
-<header class="page-header top-0">
-  <a href="#main" id="skiplink-top" class="skip-link">Skip to content</a>
-  <div class="flex items-center header-wrapper space-between">
-    <a href="/" class="font-logo"><b>⁖ MurphyShark</b></a>
-    <nav id="mainnav" aria-label="Main" class="mainnav">
+<header class="wrapper">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="repel ontop gutter-s">
+    <a href="/" class="font-logo | cluster"><b>⁖ MurphyShark</b></a>
+    <nav id="mainnav" aria-label="Main Navigation" class="mainnav">
       <ul role="list" class="cluster">
         <li><a href="/">About</a></li>
         <li><a href="/resume">Resumé</a></li>
@@ -14,82 +15,71 @@
     </nav>
   </div>
 </header>
+
 <style>
   .skip-link:not(:focus) {
     border: 0;
+    clip: rect(0 0 0 0);
     block-size: auto;
     inline-size: 1px;
-    overflow: hidden;
     margin: 0;
+    overflow: hidden;
     padding: 0;
-    clip: rect(0 0 0 0);
     position: absolute;
     white-space: nowrap;
   }
 
   .skip-link {
+    clip: rect(1px, 1px, 1px, 1px);
+    block-size: 1px;
     display: block;
+    inline-size: 1px;
     left: 1rem;
+    overflow: hidden;
+    position: absolute;
     top: 1rem;
     z-index: 999;
   }
 
-  .sticky {
+  .ontop {
     position: relative;
     z-index: 1;
   }
 
-  .top-0 {
-    top: 0;
-  }
-
-  .page-header {
-    background-color: inherit;
-    z-index: 10;
-  }
-
-  .space-between {
+  .repel {
+    align-items: var(--repel-vertical-alignment, center);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter, var(--space-s-l));
     justify-content: space-between;
   }
 
-  .flex {
-    display: flex;
+  .gutter-s {
+    --gutter: clamp(0.625rem, 0.55rem + 0.38vw, 0.875rem)
   }
 
-  .items-center {
-    align-items: center;
-  }
-
-  .header-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    inline-size: 100%;
-    max-inline-size: 1280px;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  .mainnav:has(ul:first-child) {
+    --nav-position: relative;
   }
 
   .mainnav ul {
     list-style: none;
     margin-top: 0.5ch;
     margin-bottom: 0.5ch;
+    padding: 0;
   }
 
   .mainnav a {
     border-radius: 0.3rem;
+    padding: clamp(0.3125rem, 0.27rem + 0.19vw, 0.4375rem) clamp(0.1875rem, 0.15rem + 0.19vw, 0.3125rem);
     display: block;
     font-weight: 600;
-    padding: clamp(0.3125rem, 0.27rem + 0.19vw, 0.4375rem) clamp(0.1875rem, 0.15rem + 0.19vw, 0.3125rem);
+    font-size: var(--size-step-0);
     text-decoration: none;
     text-decoration-color: transparent;
     text-decoration-line: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 0.3em;
-  }
-
-  .font-logo {
-    font-family: 'RedHatDisplay-Bold';
-    font-size: var(--size-step-0);
   }
 
   .mainnav a:hover {

@@ -1,43 +1,8 @@
 ---
 import '../styles/global.css';
-
-// CSS variables for MainComponent
-const wrapperGap = "clamp(1rem, 6vw, 3rem)";
-const wrapperFeature = "minmax(0, 5rem)";
-const wrapperPopout = "minmax(0, 2rem)";
 ---
-
-<style
-  is:global
-  define:vars={{ wrapperGap, wrapperFeature, wrapperPopout }}
->
-  .wrapper {
-    display: grid;
-    grid-template-columns:
-      [full-start] minmax(var(--wrapperGap), 1fr)
-      [feature-start] var(--wrapperFeature)
-      [popout-start] var(--wrapperPopout)
-      [content-start] min(
-        var(--wrapperWidth, 85rem),
-        100% - var(--wrapperGap) * 2
-      )
-      [content-end] var(--wrapperPopout)
-      [popout-end] var(--wrapperFeature)
-      [feature-end] minmax(var(--wrapperGap), 1fr)
-      [full-end];
-  }
-
-  .wrapper > * {
-    grid-column: content;
-  }
-
-  .region {
-    padding-block-start: var(--region-space-fallback);
-    padding-block-end: var(--region-space-fallback);
-  }
-</style>
 <main id="main" class="flow">
-  <div class="wrapper">
+  <div class="wrapper prose">
     <slot />
   </div>
 </main>

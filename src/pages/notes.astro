@@ -40,8 +40,8 @@ const pageTitle: string = "Notes";
         d="m0 96 80-5.3C160 85 320 75 480 64s320-21 480-21.3c160 .3 320 10.3 400 16l80 5.3V0H0z"
       ></path>
     </svg>
-    <section class="wrapper flow prose section__inner">
-      <div class="grid__inner">
+    <section class="wrapper section__inner feature">
+      <div class="grid__inner feature">
         <!-- Add notes card here --START -->
         <div class="custom-card">
           <picture><source type="image/jpeg" srcset="/images/abstract.png 400w, /images/abstract.png 520w" sizes="(max-width: 615px) 50vw, 100vw">
@@ -88,6 +88,10 @@ const pageTitle: string = "Notes";
     font-family: "RedHatMono-Regular";
   }
 
+  .feature {
+    grid-column: feature;
+  }
+
   .divider {
     block-size: 3.5em;
     display: block;
@@ -104,11 +108,14 @@ const pageTitle: string = "Notes";
     padding-block-start: clamp(1.1875rem, 0.48rem + 3.56vw, 3.5rem);
   }
 
+  .gutter {
+    --gutter: var(--space-xl) var(--space-xs-sm);
+  }
+
   .grid__inner {
     display: grid;
-    gap: var(--space-xl) var(--space-xs-sm);
-    grid-template-columns: repeat(auto-fill, minmax(var(--grid-min-item-size, 16rem)), 1fr);
-    grid-column: feature;
+    gap: var(--gutter, var(--space-s-m));
+    grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(var(--grid-min-item-size, 16rem), 1fr));
   }
 
   .custom-card {
@@ -146,6 +153,10 @@ const pageTitle: string = "Notes";
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  @media (max-width: 640px) {
+    --grid-placement: 1;
   }
 
   .text-step-min-1 {

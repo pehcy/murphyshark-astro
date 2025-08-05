@@ -46,13 +46,18 @@
 }
 
 body {
+    --body-font-size: var(--size-step-0);
     font-family: "Atkinson-Hyperlegible-Regular", sans-serif;
     color: var(--color-text);
     background-color: var(--color-bg-accent);
-    font-size: clamp(1.125rem, 0.97rem + 0.78vw, 1.625rem);
-    letter-spacing: -0.05ch;
+    font-size: var(--body-font-size);
+    font-size-adjust: from-font;
+    font-weight: 400;
+    letter-spacing: -0.04ch;
     line-height: 1.4;
     text-rendering: optimizeSpeed;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -80,24 +85,34 @@ a:is(.indicator):after {
     text-decoration: underline;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 900;
     letter-spacing: -0.075ch;
     line-height: 1.2;
     font-family: 'RedHatDisplay-Medium', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     text-wrap: balance;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 0;
     margin-top: 1.5em;
 }
 
 h1 {
-	font-size: var(--size-step-6);
+    font-size: var(--size-step-6);
     display: block;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
@@ -107,19 +122,19 @@ h1 {
 }
 
 h2 {
-	font-size: 2.441em;
+    font-size: 2.441em;
 }
 
 h3 {
-	font-size: 1.953em;
+    font-size: 1.953em;
 }
 
 h4 {
-	font-size: 1.563em;
+    font-size: 1.563em;
 }
 
 h5 {
-	font-size: 1.25em;
+    font-size: 1.25em;
 }
 
 .gradient-text {
@@ -130,32 +145,36 @@ h5 {
     padding: .6rem 0;
 }
 
+
 .prose {
-    --wrapperWidth: 64rem;
+    --wrapper-width: 64rem;
 }
 
 .full {
     grid-column: full;
 }
 
-.flow>*+*{
+.flow>*+* {
     margin-block-start: var(--flow-space);
 }
 
 .cluster {
-    align-items: center;
+    align-items: var(--cluster-vertical-alignment, center);;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--gutter);
-    justify-content: flex-start;
+    justify-content: var(--cluster-horizontal-alignment, flex-start);
 }
 
 .text-center {
     text-align: center;
 }
 
-canvas, img, picture, svg {
+canvas,
+img,
+picture,
+svg {
     background-repeat: no-repeat;
     background-size: cover;
     block-size: auto;
@@ -165,21 +184,64 @@ canvas, img, picture, svg {
     vertical-align: middle;
 }
 
-article > pre {
-  padding: 8px 16px;
-  overflow-x: auto;
-  border-radius: 4px;
-  background: #343434;
+article>pre {
+    padding: 8px 16px;
+    overflow-x: auto;
+    border-radius: 4px;
+    background: #343434;
 }
 
-pre > code {
-  border-radius: 4px;
-  font-family: 'RedHatMono-Regular', Consolas, Monaco, 'Andale Mono', monospace;
-  display: block;
-  font-size: 16px;
-  line-height: 1.5;
-  word-break: normal;
-  white-space: pre;
-  word-spacing: normal;
-  tab-size: 4;
+pre>code {
+    border-radius: 4px;
+    font-family: 'RedHatMono-Regular', Consolas, Monaco, 'Andale Mono', monospace;
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    word-break: normal;
+    white-space: pre;
+    word-spacing: normal;
+    tab-size: 4;
+}
+
+.wrapper {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(var(--wrapper-width, 85rem), 100% - var(--gap) * 2);
+    --popout: minmax(0, 2rem);
+    --feature: minmax(0, 5rem);
+    display: grid;
+    grid-template-columns:
+        [full-start] var(--full) 
+        [feature-start] var(--feature) 
+        [popout-start] var(--popout) 
+        [content-start] var(--content) 
+        [content-end] var(--popout) 
+        [popout-end] var(--feature) 
+        [feature-end] var(--full) [full-end];
+}
+
+.wrapper>* {
+    grid-column: content;
+}
+
+.region {
+    padding-block-start: var(--region-space-fallback);
+    padding-block-end: var(--region-space-fallback);
+}
+
+.mt-l-xl {
+    margin-top: clamp(1.1875rem, .48rem + 3.56vw, 3.5rem);
+}
+
+.p-s-m {
+    padding: clamp(.625rem, .41rem + 1.06vw, 1.3125rem);
+}
+
+.gutter-xs {
+    --gutter: clamp(0.3125rem,0.27rem + 0.19vw,0.4375rem);
+}
+
+.font-logo {
+    font-family: 'RedHatDisplay-Bold';
+    font-size: var(--size-step-0);
 }
