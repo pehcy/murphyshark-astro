@@ -10,6 +10,6 @@ export default defineConfig({
           theme: 'min-dark'
       }
   },
-
+  site: 'https://murphyshark.vercel.app/',
   integrations: [sitemap()]
 });
