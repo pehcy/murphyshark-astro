@@ -12,7 +12,7 @@ const currentYear: number = new Date().getFullYear();
 				© {currentYear}
 				<a href="/" class="font-logo | cluster"><b>MurphyShark</b></a>
 			</nav>
-			<nav aria-label="Social" class="cluster">
+			<nav aria-label="Social" class="cluster" style="--gutter: 1.725rem;">
 				<a href="/feed.xml" rel="alternate" type="application/atom+xml">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const currentYear: number = new Date().getFullYear();
               r="1"></circle></svg
           >
         </a>
-				<a href="" rel="me">
+				<a href="https://github.com/pehcy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <span class="sr-only">github</span>
           <div aria-hidden="true">
             <svg
@@ -55,11 +55,11 @@ const currentYear: number = new Date().getFullYear();
           </div>
         </a>
 			</nav>
-			<nav aria-label="Theme" class="cluster" style="--gutter: 0.5em;">
-				<h2 class="theme-toggle-label">Theme</h2>
-				<ThemeToggle />
-			</nav>
 		</div>
+    <nav aria-label="Theme" class="cluster mt-s" style="--gutter: 0.5em;">
+			<h2 class="theme-toggle-label">Theme</h2>
+			<ThemeToggle />
+		</nav>
     <div class="cluster gutter-xs mt-xl text-step-min-1">
       Made with <a href="https://astro.build/" class="link-underline">Astro</a> by MurphyShark (pehcy)
     </div>

@@ -190,6 +190,10 @@ pre>code {
     padding-block-end: var(--region-space-fallback);
 }
 
+.mt-s {
+    margin-top: 1.1875rem;
+}
+
 .mt-l-xl {
     margin-top: clamp(1.1875rem, .48rem + 3.56vw, 3.5rem);
 }
